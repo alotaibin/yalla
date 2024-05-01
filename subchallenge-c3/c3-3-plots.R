@@ -1,14 +1,16 @@
+require(readr)
+require(ggplot2)
+require(gridExtra)
+require(this.path)
+setwd(this.path::here())
 
 ##############################################################################
 # Create a scatter plots for the real and the simulated data (with size 10^4):
 ##############################################################################
-library(readr)
-library(ggplot2)
-library(gridExtra)
 
 # read the simualted data of size 10^4:
-sims.new <- read.csv("sim.scatterplot.csv") 
-X <- read.csv("Data/Coputopia.csv")
+sims.new <- read.csv("../Data/sim.scatterplot.csv") 
+X <- read.csv("../Data/Coputopia.csv")
 X=X[,-c(1,2)]
 # Create data frames:
 my_data1 <- data.frame(x = X[,1], y = X[,2])
